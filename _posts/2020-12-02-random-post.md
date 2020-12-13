@@ -1,5 +1,4 @@
 ---
-layout: posts
 title: Random post
 categories:
     - algorithm
