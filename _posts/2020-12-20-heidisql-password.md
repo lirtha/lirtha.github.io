@@ -39,4 +39,4 @@ HeidiSQL에 세션 정보를 저장해놓고 쓰다가 필요할 때 비밀번�
 
 ---
 
-> Cr. https://gist.github.com/jpatters/4553139#gistcomment-1880752
+> Ref. https://gist.github.com/jpatters/4553139#gistcomment-1880752
