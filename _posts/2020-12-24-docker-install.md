@@ -11,7 +11,9 @@ tags:
 
 인터넷이 막혀 curl이나 pip 등의 명령을 사용할 수 없는 환경에서 일하다 보면 직접 설치파일을 받아서 설치하는 법을 찾게 된다.
 
+인터넷이 되는 Local PC(윈도우)에서 인터넷이 막혀있는 서버(Linux)에 Docker를 설치하는 과정이다.
 
+---
 
 ### 1. Setup Docker Daemon
 
@@ -64,7 +66,7 @@ sudo docker -v
 
 1. Auto-Completion 주소 : <https://raw.githubusercontent.com/docker/compose/1.27.4/contrib/completion/bash/docker-compose>
 2. 위 파일 내용을 copy하여 Local Folder 내 docker-compose 이름으로 파일 저장(개행문자를 LF로 저장해야 한다)
-3. 서버의 다음 위치로 이동: /etc/bash_completion.d/docker-compose
+3. 서버의 다음 위치로 이동: `/etc/bash_completion.d/docker-compose`
 
 > Ref. <https://docs.docker.com/compose/completion/>
 
@@ -72,11 +74,11 @@ sudo docker -v
 
 ### 4. set up local pc docker
 
-서버에 Private Registry를 Setup 하거나, 이후에 서버의 Registry에 이미지를 push 하려는 경우 Local PC(오피스)에 Docker setup이 필요하다.
+서버에 Private Registry를 Setup 하거나, 이후에 서버의 Registry에 이미지를 push 하려는 경우 Local PC에도 Docker setup이 필요하다.
 
-Local PC에 Docker Desktop 설치 시 Hyper-V가 활성화 되므로 보안 예외 결재가 필요하며, 다른 가상화 기술을 사용할 수 없게 된다(이를 피하려면 Docker Desktop 대신 VirtualBox를 사용하는 Docker Toolbox를 설치해야 한다).
+Local PC에 Docker Desktop 설치 시 Hyper-V가 활성화 되며, 다른 가상화 기술을 사용할 수 없게 된다(이를 피하려면 Docker Desktop 대신 VirtualBox를 사용하는 Docker Toolbox를 설치해야 한다).
 
-<https://docs.docker.com/docker-for-windows/install/> 에서 Docker Desktop Installer 다운받은 후 설치
+<https://docs.docker.com/docker-for-windows/install/> 에서 Docker Desktop Installer 다운받은 후 설치하면 된다.
 
 ---
 
@@ -108,7 +110,7 @@ Local PC에 Docker Desktop 설치 시 Hyper-V가 활성화 되므로 보안 예�
         image: registry:latest
         container_name: docker-registry
         ports:
-        - 5000:5000
+            - 5000:5000
     ```
 
     2. deploy
@@ -248,16 +250,16 @@ libnvidia-container1
 
 
 1. 설치 파일을 다운로드 받는다.
-    1. nvidia-docker2 : https://nvidia.github.io/nvidia-docker/ubuntu18.04/amd64/nvidia-docker2_2.5.0-1_all.deb
-    * 다른 버전 또는 OS의 경우 https://github.com/NVIDIA/nvidia-docker/tree/gh-pages 에서 경로와 파일명을 확인하여 수정하여 받는다.
-    2. nvidia-container-runtime : https://nvidia.github.io/nvidia-container-runtime/ubuntu18.04/amd64/nvidia-container-runtime_3.4.0-1_amd64.deb
-    * 다른 버전 또는 OS의 경우 https://github.com/NVIDIA/nvidia-container-runtime/tree/gh-pages 에서 경로와 파일명을 확인하여 수정하여 받는다.
-    3. nvidia-continer-toolkit : https://nvidia.github.io/nvidia-container-runtime/ubuntu18.04/amd64/nvidia-container-toolkit_1.3.0-1_amd64.deb
-    * 다른 버전 또는 OS의 경우 https://github.com/NVIDIA/nvidia-container-runtime/tree/gh-pages 에서 경로와 파일명을 확인하여 수정하여 받는다.
-    4. libnvidia-container-tools : https://nvidia.github.io/libnvidia-container/ubuntu18.04/amd64/libnvidia-container-tools_1.3.0-1_amd64.deb
-    * 다른 버전 또는 OS의 경우 https://github.com/NVIDIA/libnvidia-container/tree/gh-pages 에서 경로와 파일명을 확인하여 수정하여 받는다.
-    5. libnvidia-container1 : https://nvidia.github.io/libnvidia-container/ubuntu18.04/amd64/libnvidia-container1_1.3.0-1_amd64.deb
-    * 다른 버전 또는 OS의 경우 https://github.com/NVIDIA/libnvidia-container/tree/gh-pages 에서 경로와 파일명을 확인하여 수정하여 받는다.
+    1. nvidia-docker2 : <https://nvidia.github.io/nvidia-docker/ubuntu18.04/amd64/nvidia-docker2_2.5.0-1_all.deb>
+    * 다른 버전 또는 OS의 경우 <https://github.com/NVIDIA/nvidia-docker/tree/gh-pages> 에서 경로와 파일명을 확인하여 수정하여 받는다.
+    2. nvidia-container-runtime : <https://nvidia.github.io/nvidia-container-runtime/ubuntu18.04/amd64/nvidia-container-runtime_3.4.0-1_amd64.deb>
+    * 다른 버전 또는 OS의 경우 <https://github.com/NVIDIA/nvidia-container-runtime/tree/gh-pages> 에서 경로와 파일명을 확인하여 수정하여 받는다.
+    3. nvidia-continer-toolkit : <https://nvidia.github.io/nvidia-container-runtime/ubuntu18.04/amd64/nvidia-container-toolkit_1.3.0-1_amd64.deb>
+    * 다른 버전 또는 OS의 경우 <https://github.com/NVIDIA/nvidia-container-runtime/tree/gh-pages> 에서 경로와 파일명을 확인하여 수정하여 받는다.
+    4. libnvidia-container-tools : <https://nvidia.github.io/libnvidia-container/ubuntu18.04/amd64/libnvidia-container-tools_1.3.0-1_amd64.deb>
+    * 다른 버전 또는 OS의 경우 <https://github.com/NVIDIA/libnvidia-container/tree/gh-pages> 에서 경로와 파일명을 확인하여 수정하여 받는다.
+    5. libnvidia-container1 : <https://nvidia.github.io/libnvidia-container/ubuntu18.04/amd64/libnvidia-container1_1.3.0-1_amd64.deb>
+    * 다른 버전 또는 OS의 경우 <https://github.com/NVIDIA/libnvidia-container/tree/gh-pages> 에서 경로와 파일명을 확인하여 수정하여 받는다.
 
 2. 설치 파일을 서버로 옮긴다.
 3. 파일을 설치한다. 다음의 순서로 해야 의존성 오류가 나지 않는다.
