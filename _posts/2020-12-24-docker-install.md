@@ -1,5 +1,6 @@
 ---
 title: Docker 오프라인 설치하기
+classes: wide
 categories:
     - docker
 tags:

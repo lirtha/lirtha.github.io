@@ -1,5 +1,6 @@
 ---
 title: HeidiSQL 비밀번호 찾기
+classes: wide
 categories:
     - miscellaneous
 tags:
